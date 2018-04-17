@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta name="mobile-web-app-capable" content="yes">
+	<style>
+		html,
+		body {
+			width: 80%;
+			margin: 60px auto;
+		}
+		.hide {
+			display: none !important
+		}
+		.form-validate{
+			margin-bottom:20px;
+		}
+	</style>
+	<link rel="stylesheet" type="text/css" href="./css/validate.min.css">
+</head>
+
+<body>
+	<div class="form-validate" id="clearInput">
+		<input type="text" value="" placeholder="Enter Name" class="validate-input" />
+		<div class="validate-status">
+			<!-- <div class="v-clear"></div> -->
+		</div>
+	</div>
+
+	<div class="form-validate">
+		<input type="text" value="" placeholder="Enter Name" class="validate-input" />
+		<div class="validate-status">
+			<div class="v-success"></div>
+		</div>
+	</div>
+
+	<div class="form-validate">
+		<input type="text" value="" placeholder="Enter Name" class="validate-input" />
+		<div class="validate-status">
+			<div class="v-warning"></div>
+		</div>
+	</div>
+
+	<div class="form-validate">
+		<input type="text" value="" placeholder="Enter Name" class="validate-input" />
+		<div class="validate-status">
+			<div class="v-loading"></div>
+		</div>
+	</div>
+
+	<script src="./js/validate.min.js"></script>
+	<script>
+		(function () {
+			var input = new inputStatus({
+				"id": "clearInput"
+			});
+			// input.clear();
+		}(window))
+	</script>
+</body>
+
+</html>

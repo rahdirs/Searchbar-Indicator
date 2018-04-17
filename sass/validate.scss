@@ -1,0 +1,164 @@
+@mixin pushAniamtion {
+    -webkit-animation-name: push;
+    animation-name: push;
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+    display: block
+}
+
+.form-validate {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: 100%;
+}
+
+.validate-input {
+    border: 1px solid #ddd;
+    padding: 16px 16px 16px 10px;
+    display: flex;
+    opacity: 1 !important;
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.validate-status {
+    right: 6px;
+    top:18%;// position is not woking in safari with flexbox
+    position: absolute;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    padding: 4px;
+    z-index: 99;
+    .v-success {
+        border-radius: 50%;
+        width: 18px;
+        height: 18px;
+        background: #4DC677 url("../img/success.png") center/10px 10px no-repeat;
+        @include pushAniamtion();
+    }
+    .v-warning {
+        border-radius: 50%;
+        width: 18px;
+        height: 18px;
+        background: #ff5454 url("../img/warning.png") center/8px 8px no-repeat;
+        cursor: pointer;
+        @include pushAniamtion();
+    }
+    .v-clear {
+        border-radius: 50%;
+        width: 18px;
+        height: 18px;
+        background: #ddd url("../img/warning.png") center/8px 8px no-repeat;
+        cursor: pointer;
+        @include pushAniamtion();
+    }
+    .v-clear:hover {
+        background-color: #ff5454;
+    }
+    .v-loader {
+        box-sizing: border-box;
+        -webkit-border-radius: 50px;
+        -moz-border-radius: 50px;
+        border-radius: 50px;
+        width: 18px;
+        height: 18px;
+        border: 1px solid #fff; // border-top: 2px solid #379052;
+        // border-right: 2px solid #379052;
+        border-bottom: 2px solid #414141;
+        border-left: 2px solid #414141; // background: transparent url("../img/spin.png") center/18px 18px no-repeat;
+        -webkit-animation: spin 1s linear infinite;
+        -moz-animation: spin 1s linear infinite;
+        animation: spin 1s linear infinite;
+    }
+}
+
+.close {
+    -webkit-animation-name: pop;
+    animation-name: pop;
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+}
+
+@-moz-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes push {
+    0% {
+        -webkit-transform: scale(0.1);
+        transform: scale(0.1);
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@keyframes push {
+    0% {
+        -webkit-transform: scale(0.1);
+        transform: scale(0.1);
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@-webkit-keyframes pop {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    100% {
+        -webkit-transform: scale(0.1);
+        transform: scale(0.1);
+    }
+}
+
+@keyframes pop {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    100% {
+        -webkit-transform: scale(0.1);
+        transform: scale(0.1);
+    }
+}
